@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react';
-import Button from '@mui/material/Button';
 import { Paper, SeoAssessor, ContentAssessor, helpers } from "yoastseo";
 import {Paper as PaperType} from "./models/Analysis";
 import Jed from "jed";
@@ -7,6 +6,7 @@ import AnalysisResults from "./components/AnalysisResults";
 import GooglePreviewTool, {GooglePreviewProps} from "./components/GooglePreviewTool";
 import List from '@mui/material/List';
 import FacebookPreviewTool, {FacebookPreviewProps} from "./components/FacebookPreviewTool";
+import FormItem from "./components/FormItem";
 
 const i18n = () => {
   return new Jed({
@@ -31,6 +31,8 @@ const Yoast = () => {
   const [contentAssessorResults, setContentAssessorResults] = useState();
   const [seoAssessorResults, setSeoAssessorResults] = useState();
   const [requestedSEOData, setRequestedSEOData] = useState(false);
+  const [seoModel, setSeoModel] = useState({});
+  const [parentModelId, setParentModelId] = useState<string>('');
   const requestSEOData = () => {
     setRequestedSEOData(true);
     //@ts-ignore
@@ -38,7 +40,7 @@ const Yoast = () => {
   }
 
   useEffect(() => {
-    //@ts-ignore
+    // @ts-ignore
     const guestToHostSubscription = window.CrafterCMSNext?.system.getGuestToHostBus()
       .subscribe((action) => {
         switch (action.type) {
@@ -90,12 +92,29 @@ const Yoast = () => {
         }
       });
 
+    const getSeoInfo = () => {
+      // @ts-ignore
+      const state = window.craftercms.getStore().getState();
+      const modelId = state.preview.guest?.modelId;
+      if (modelId) {
+        const itemModel = state.preview.guest.models[modelId];
+        if (itemModel.yoastSEO_o) { // TODO: should this be retrieved in another way (since variable name may change)?
+          setSeoModel(state.preview.guest.models[itemModel.yoastSEO_o[0]]);
+          setParentModelId(itemModel.craftercms.id);
+        }
+      }
+    }
+
+    getSeoInfo();
+    // @ts-ignore
+    const storeSubscription = window.craftercms?.getStore().subscribe(() => getSeoInfo());
+
     if (!requestedSEOData) {
       requestSEOData();
     }
-
     return () => {
       guestToHostSubscription.unsubscribe();
+      storeSubscription.unsubscribe();
     };
   }, []);
 
@@ -116,6 +135,13 @@ const Yoast = () => {
         component="nav"
         aria-labelledby="nested-list-subheader"
       >
+        <FormItem
+          title="SEO"
+          parentModelId={parentModelId}
+          seoModel={seoModel}
+          setSeoModel={setSeoModel}
+          component="seo"
+        />
         {
           contentAssessor &&
           <AnalysisResults
@@ -134,6 +160,13 @@ const Yoast = () => {
         }
         <GooglePreviewTool data={googlePreviewData} />
         <FacebookPreviewTool data={facebookPreviewData}/>
+        <FormItem
+          title="Advanced"
+          parentModelId={parentModelId}
+          seoModel={seoModel}
+          setSeoModel={setSeoModel}
+          component="advanced"
+        />
       </List>
     </>
   )

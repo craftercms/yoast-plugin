@@ -1,0 +1,368 @@
+<form>
+  <title>YoastSEO</title>
+  <description />
+  <objectType>component</objectType>
+  <content-type>/component/yoastseo</content-type>
+  <imageThumbnail />
+  <quickCreate>false</quickCreate>
+  <quickCreatePath />
+  <properties>
+    <property>
+      <name>display-template</name>
+      <label>Display Template</label>
+      <value>/templates/plugins/org/craftercms/plugin/yoast.ftl</value>
+      <type>template</type>
+    </property>
+    <property>
+      <name>no-template-required</name>
+      <label>No Template Required</label>
+      <value>true</value>
+      <type>boolean</type>
+    </property>
+    <property>
+      <name>merge-strategy</name>
+      <label>Merge Strategy</label>
+      <value>inherit-levels</value>
+      <type>string</type>
+    </property>
+  </properties>
+  <sections>
+    <section>
+      <title>YoastSEO Properties</title>
+      <description />
+      <defaultOpen>true</defaultOpen>
+      <fields>
+        <field>
+          <type>auto-filename</type>
+          <id>file-name</id>
+          <iceId />
+          <title>Component ID</title>
+          <description />
+          <defaultValue />
+          <help />
+          <properties>
+            <property>
+              <name>size</name>
+              <value>50</value>
+              <type>int</type>
+            </property>
+            <property>
+              <name>maxlength</name>
+              <value>50</value>
+              <type>int</type>
+            </property>
+            <property>
+              <name>readonly</name>
+              <value />
+              <type>boolean</type>
+            </property>
+          </properties>
+          <constraints>
+          </constraints>
+        </field>
+        <field>
+          <type>input</type>
+          <id>internal-name</id>
+          <iceId />
+          <title>Internal Name</title>
+          <description />
+          <defaultValue />
+          <help />
+          <properties>
+            <property>
+              <name>size</name>
+              <value>50</value>
+              <type>int</type>
+            </property>
+            <property>
+              <name>maxlength</name>
+              <value>50</value>
+              <type>int</type>
+            </property>
+          </properties>
+          <constraints>
+            <constraint>
+              <name>required</name>
+              <value><![CDATA[true]]></value>
+              <type>boolean</type>
+            </constraint>
+          </constraints>
+        </field>
+      </fields>
+    </section>
+    <section>
+      <title>SEO</title>
+      <description />
+      <defaultOpen>false</defaultOpen>
+      <fields>
+        <field>
+          <type>input</type>
+          <id>seoTitle_s</id>
+          <iceId></iceId>
+          <title>SEO Title</title>
+          <description />
+          <defaultValue />
+          <help />
+          <properties>
+            <property>
+              <name>size</name>
+              <value>50</value>
+              <type>int</type>
+            </property>
+            <property>
+              <name>maxlength</name>
+              <value>50</value>
+              <type>int</type>
+            </property>
+            <property>
+              <name>readonly</name>
+              <value />
+              <type>boolean</type>
+            </property>
+            <property>
+              <name>tokenize</name>
+              <value>false</value>
+              <type>boolean</type>
+            </property>
+            <property>
+              <name>escapeContent</name>
+              <value>false</value>
+              <type>boolean</type>
+            </property>
+          </properties>
+          <constraints>
+            <constraint>
+              <name>required</name>
+              <value><![CDATA[]]></value>
+              <type>boolean</type>
+            </constraint>
+            <constraint>
+              <name>pattern</name>
+              <value><![CDATA[]]></value>
+              <type>string</type>
+            </constraint>
+          </constraints>
+        </field>
+        <field>
+          <type>textarea</type>
+          <id>metaDescription_t</id>
+          <iceId />
+          <title>Meta Description</title>
+          <description />
+          <defaultValue />
+          <help />
+          <properties>
+            <property>
+              <name>cols</name>
+              <value>50</value>
+              <type>int</type>
+            </property>
+            <property>
+              <name>rows</name>
+              <value>5</value>
+              <type>int</type>
+            </property>
+            <property>
+              <name>maxlength</name>
+              <value>100000</value>
+              <type>int</type>
+            </property>
+            <property>
+              <name>allowResize</name>
+              <value>true</value>
+              <type>boolean</type>
+            </property>
+            <property>
+              <name>readonly</name>
+              <value />
+              <type>boolean</type>
+            </property>
+            <property>
+              <name>escapeContent</name>
+              <value>false</value>
+              <type>boolean</type>
+            </property>
+          </properties>
+          <constraints>
+            <constraint>
+              <name>required</name>
+              <value><![CDATA[]]></value>
+              <type>boolean</type>
+            </constraint>
+          </constraints>
+        </field>
+        <field>
+          <type>input</type>
+          <id>focusKeyphrase_s</id>
+          <iceId />
+          <title>Focus Keyphrase</title>
+          <description />
+          <defaultValue />
+          <help />
+          <properties>
+            <property>
+              <name>size</name>
+              <value>50</value>
+              <type>int</type>
+            </property>
+            <property>
+              <name>maxlength</name>
+              <value>50</value>
+              <type>int</type>
+            </property>
+            <property>
+              <name>readonly</name>
+              <value />
+              <type>boolean</type>
+            </property>
+            <property>
+              <name>tokenize</name>
+              <value>false</value>
+              <type>boolean</type>
+            </property>
+            <property>
+              <name>escapeContent</name>
+              <value>false</value>
+              <type>boolean</type>
+            </property>
+          </properties>
+          <constraints>
+            <constraint>
+              <name>required</name>
+              <value><![CDATA[]]></value>
+              <type>boolean</type>
+            </constraint>
+            <constraint>
+              <name>pattern</name>
+              <value><![CDATA[]]></value>
+              <type>string</type>
+            </constraint>
+          </constraints>
+        </field>
+      </fields>
+    </section>
+    <section>
+      <title>Advanced</title>
+      <description />
+      <defaultOpen>false</defaultOpen>
+      <fields>
+        <field>
+          <type>checkbox</type>
+          <id>showInSearchResults_b</id>
+          <iceId />
+          <title>Show In Search Results</title>
+          <description />
+          <defaultValue>true</defaultValue>
+          <help></help>
+          <properties>
+            <property>
+              <name>readonly</name>
+              <value />
+              <type>boolean</type>
+            </property>
+          </properties>
+          <constraints>
+            <constraint>
+              <name>required</name>
+              <value><![CDATA[]]></value>
+              <type>boolean</type>
+            </constraint>
+          </constraints>
+        </field>
+        <field>
+          <type>checkbox</type>
+          <id>followLinks_b</id>
+          <iceId />
+          <title>Follow Links</title>
+          <description />
+          <defaultValue>true</defaultValue>
+          <help />
+          <properties>
+            <property>
+              <name>readonly</name>
+              <value />
+              <type>boolean</type>
+            </property>
+          </properties>
+          <constraints>
+            <constraint>
+              <name>required</name>
+              <value><![CDATA[]]></value>
+              <type>boolean</type>
+            </constraint>
+          </constraints>
+        </field>
+        <field>
+          <type>checkbox</type>
+          <id>indexImages_b</id>
+          <iceId />
+          <title>Index Images</title>
+          <description />
+          <defaultValue>true</defaultValue>
+          <help></help>
+          <properties>
+            <property>
+              <name>readonly</name>
+              <value />
+              <type>boolean</type>
+            </property>
+          </properties>
+          <constraints>
+            <constraint>
+              <name>required</name>
+              <value><![CDATA[]]></value>
+              <type>boolean</type>
+            </constraint>
+          </constraints>
+        </field>
+        <field>
+          <type>checkbox</type>
+          <id>archive_b</id>
+          <iceId></iceId>
+          <title>Archive</title>
+          <description />
+          <defaultValue>true</defaultValue>
+          <help></help>
+          <properties>
+            <property>
+              <name>readonly</name>
+              <value />
+              <type>boolean</type>
+            </property>
+          </properties>
+          <constraints>
+            <constraint>
+              <name>required</name>
+              <value><![CDATA[]]></value>
+              <type>boolean</type>
+            </constraint>
+          </constraints>
+        </field>
+        <field>
+          <type>checkbox</type>
+          <id>snippet_b</id>
+          <iceId />
+          <title>Snippet</title>
+          <description />
+          <defaultValue>true</defaultValue>
+          <help />
+          <properties>
+            <property>
+              <name>readonly</name>
+              <value />
+              <type>boolean</type>
+            </property>
+          </properties>
+          <constraints>
+            <constraint>
+              <name>required</name>
+              <value><![CDATA[]]></value>
+              <type>boolean</type>
+            </constraint>
+          </constraints>
+        </field>
+      </fields>
+    </section>
+  </sections>
+  <datasources />
+</form>
