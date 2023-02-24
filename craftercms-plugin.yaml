@@ -7,7 +7,7 @@ plugin:
   id: org.craftercms.plugin
   name: Yoast plugin
   tags:
-    - test
+    - yoast
   version:
     major: 1
     minor: 0
@@ -19,7 +19,7 @@ plugin:
   media:
     screenshots:
       - title: Yoast plugin
-        description: Crafter CMS Example Plugin
+        description: Crafter CMS Yoast Plugin
         url: "https://raw.githubusercontent.com/craftercms/site-plugin-example/master/.crafter/logo.svg"
   developer:
     company:
@@ -35,7 +35,7 @@ plugin:
   crafterCmsVersions:
     - major: 4
       minor: 0
-      patch: 0
+      patch: 3
   crafterCmsEditions:
     - community
     - enterprise
@@ -62,7 +62,7 @@ plugin:
                       - name: title
                         attributes:
                           - name: id
-                            value: toast.toastSeo
+                            value: yoast.yoastSeo
                           - name: defaultMessage
                             value: Yoast SEO
                       - name: icon
@@ -83,6 +83,6 @@ plugin:
                                   - name: type
                                     value: sidebar
                                   - name: name
-                                    value: react-sample
+                                    value: yoast-plugin
                                   - name: file
                                     value: index.modern.js

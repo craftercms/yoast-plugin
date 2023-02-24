@@ -1,23 +1,16 @@
 import React, {useEffect, useState} from 'react';
-import { Paper, SeoAssessor, ContentAssessor, helpers } from "yoastseo";
-import {Paper as PaperType} from "./models/Analysis";
-import Jed from "jed";
-import AnalysisResults from "./components/AnalysisResults";
-import GooglePreviewTool, {GooglePreviewProps} from "./components/GooglePreviewTool";
+import { Paper, SeoAssessor, ContentAssessor, helpers } from 'yoastseo';
+import {Paper as PaperType} from './models/Analysis';
+import Jed from 'jed';
+import AnalysisResults from './components/AnalysisResults';
+import GooglePreviewTool, { GooglePreviewProps } from './components/GooglePreviewTool';
 import List from '@mui/material/List';
-import FacebookPreviewTool, {FacebookPreviewProps} from "./components/FacebookPreviewTool";
+import FacebookPreviewTool, { FacebookPreviewProps } from './components/FacebookPreviewTool';
 
 const i18n = () => {
   return new Jed({
     domain: `js-text-analysis`,
-    locale_data: {
-      "js-text-analysis": {
-        "": {}
-        // "%1$sSEO title width%3$s: The SEO title is wider than the viewable limit. %2$sTry to make it shorter%3$s.": [
-        //   "%1$sJudul SEO%3$s melebihi batas yang dapat dilihat. %2$sCobalah untuk membuatnya lebih pendek%3$s."
-        // ]
-      }
-    }
+    locale_data: { "js-text-analysis": { "": {} } }
   });
 };
 const contentAssessor = new ContentAssessor(i18n());
@@ -30,8 +23,6 @@ const Yoast = () => {
   const [contentAssessorResults, setContentAssessorResults] = useState();
   const [seoAssessorResults, setSeoAssessorResults] = useState();
   const [requestedSEOData, setRequestedSEOData] = useState(false);
-  const [seoModel, setSeoModel] = useState({});
-  const [parentModelId, setParentModelId] = useState<string>('');
   const requestSEOData = () => {
     setRequestedSEOData(true);
     //@ts-ignore - Unresolved variable CrafterCMSNExt
@@ -111,11 +102,7 @@ const Yoast = () => {
 
   return (
     <>
-      <List
-        sx={{ width: '100%', bgcolor: 'background.paper' }}
-        component="nav"
-        aria-labelledby="nested-list-subheader"
-      >
+      <List sx={{ width: '100%', bgcolor: 'background.paper' }} component="nav">
         {
           contentAssessor &&
           <AnalysisResults
