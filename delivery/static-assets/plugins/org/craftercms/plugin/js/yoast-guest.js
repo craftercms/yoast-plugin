@@ -6,9 +6,9 @@ document.addEventListener("DOMContentLoaded", function() {
     const keyword = document.querySelector('meta[name="keyword"]')?.content;
     const contents = document.querySelector('body').innerHTML;
     const url = window.location.href;
-    const facebookDescription = document.querySelector('meta[name="og:description"]')?.content ?? description;
+    const facebookDescription = document.querySelector('meta[property="og:description"]')?.content ?? description;
     const facebookUrl = window.location.host;
-    const facebookImageUrl = document.querySelector('meta[name="og:image"]')?.content;
+    const facebookImageUrl = document.querySelector('meta[property="og:image"]')?.content;
 
     return {
       title,
