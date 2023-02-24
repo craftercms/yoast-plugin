@@ -6,7 +6,6 @@ import AnalysisResults from "./components/AnalysisResults";
 import GooglePreviewTool, {GooglePreviewProps} from "./components/GooglePreviewTool";
 import List from '@mui/material/List';
 import FacebookPreviewTool, {FacebookPreviewProps} from "./components/FacebookPreviewTool";
-import FormItem from "./components/FormItem";
 
 const i18n = () => {
   return new Jed({
@@ -35,7 +34,7 @@ const Yoast = () => {
   const [parentModelId, setParentModelId] = useState<string>('');
   const requestSEOData = () => {
     setRequestedSEOData(true);
-    //@ts-ignore
+    //@ts-ignore - Unresolved variable CrafterCMSNExt
     window.CrafterCMSNext?.system.getHostToGuestBus().next({ type: 'REQUEST_SEO_DATA' });
   }
 
@@ -92,23 +91,6 @@ const Yoast = () => {
         }
       });
 
-    const getSeoInfo = () => {
-      // @ts-ignore
-      const state = window.craftercms.getStore().getState();
-      const modelId = state.preview.guest?.modelId;
-      if (modelId) {
-        const itemModel = state.preview.guest.models[modelId];
-        if (itemModel.yoastSEO_o) { // TODO: should this be retrieved in another way (since variable name may change)?
-          setSeoModel(state.preview.guest.models[itemModel.yoastSEO_o[0]]);
-          setParentModelId(itemModel.craftercms.id);
-        }
-      }
-    }
-
-    getSeoInfo();
-    // @ts-ignore
-    window.craftercms?.getStore().subscribe(() => getSeoInfo());
-
     if (!requestedSEOData) {
       requestSEOData();
     }
@@ -134,13 +116,6 @@ const Yoast = () => {
         component="nav"
         aria-labelledby="nested-list-subheader"
       >
-        <FormItem
-          title="SEO"
-          parentModelId={parentModelId}
-          seoModel={seoModel}
-          setSeoModel={setSeoModel}
-          component="seo"
-        />
         {
           contentAssessor &&
           <AnalysisResults
@@ -159,13 +134,6 @@ const Yoast = () => {
         }
         <GooglePreviewTool data={googlePreviewData} />
         <FacebookPreviewTool data={facebookPreviewData}/>
-        <FormItem
-          title="Advanced"
-          parentModelId={parentModelId}
-          seoModel={seoModel}
-          setSeoModel={setSeoModel}
-          component="advanced"
-        />
       </List>
     </>
   )
