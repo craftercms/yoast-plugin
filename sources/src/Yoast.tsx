@@ -107,14 +107,13 @@ const Yoast = () => {
 
     getSeoInfo();
     // @ts-ignore
-    const storeSubscription = window.craftercms?.getStore().subscribe(() => getSeoInfo());
+    window.craftercms?.getStore().subscribe(() => getSeoInfo());
 
     if (!requestedSEOData) {
       requestSEOData();
     }
     return () => {
       guestToHostSubscription.unsubscribe();
-      storeSubscription.unsubscribe();
     };
   }, []);
 

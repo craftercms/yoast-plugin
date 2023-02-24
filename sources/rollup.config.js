@@ -47,7 +47,13 @@ export default {
     resolve({ extensions, preferBuiltins: false }),
     babel({
       exclude: 'node_modules/**',
-      presets: ['@babel/env', '@babel/preset-react']
+      presets: ['@babel/preset-env', '@babel/preset-react'],
+      runtimeHelpers: true,
+      plugins: [
+        ['@babel/plugin-transform-runtime', {
+          "regenerator": true
+        }]
+      ]
     }),
     commonjs({
       exclude: 'src/**',

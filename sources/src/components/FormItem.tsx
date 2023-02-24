@@ -56,7 +56,7 @@ export default function FormItem(props: FormProps) {
       }
     });
   };
-  const Component = component === 'seo' ? SeoForm : AdvancedForm; // TODO: create a map?
+  const Component = component === 'seo' ? SeoForm : AdvancedForm;
 
   return (
     <AccordionItem title={title}>
