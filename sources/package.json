@@ -14,7 +14,7 @@
     "node": ">=10"
   },
   "scripts": {
-    "build": "rollup --config rollup.config.js",
+    "build": "./build.sh",
     "watch": "rollup --config rollup.config.js -w"
   },
   "peerDependencies": {
