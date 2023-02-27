@@ -26,12 +26,12 @@ const Yoast = () => {
   const requestSEOData = () => {
     setRequestedSEOData(true);
     //@ts-ignore - Unresolved variable CrafterCMSNExt
-    window.CrafterCMSNext?.system.getHostToGuestBus().next({ type: 'REQUEST_SEO_DATA' });
+    window.CrafterCMSNext?.system.getHostToGuestBus?.().next({ type: 'REQUEST_SEO_DATA' });
   }
 
   useEffect(() => {
     // @ts-ignore
-    const guestToHostSubscription = window.CrafterCMSNext?.system.getGuestToHostBus()
+    const guestToHostSubscription = window.CrafterCMSNext?.system.getGuestToHostBus?.()
       .subscribe((action) => {
         switch (action.type) {
           case 'RESPONSE_SEO_DATA':
