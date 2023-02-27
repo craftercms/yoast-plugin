@@ -1,6 +1,6 @@
-import React from "react";
-import Rating from "./Rating";
-import {addRating, getValidResults, sortRatings} from "../utils/utils";
+import React from 'react';
+import Rating from './Rating';
+import {addRating, getValidResults, sortRatings} from '../utils/utils';
 import {Assessor, Rating as RatingModel} from '../models/Analysis';
 import List from '@mui/material/List';
 import Typography from '@mui/material/Typography';

@@ -10,12 +10,11 @@ export interface Paper {
     url?: string;
   };
   _text: any;
-  // TODO: add paper functions?
   [id: string]: any;
 }
 
 export interface Result {
-  marks: any[]; // TODO: check type (I'm not getting any results with marks)
+  marks: any[];
   score: number;
   text: string;
   _hasMarks: boolean;
@@ -24,7 +23,6 @@ export interface Result {
   _marker: Function;
   actual?: number;
   rating?: 'bad' | 'ok' | 'good';
-  // TODO: add result functions?
   [id: string]: any;
 }
 
@@ -36,7 +34,7 @@ export interface Rating {
 }
 
 export interface Assessor {
-  i18n: any; // TODO: JED (need to figure out this)
+  i18n: any;
   results: Result[];
   type: string;
   _assessments: any[];

@@ -1,10 +1,10 @@
-import React from "react";
-import Presenter from "./Presenter";
-import {Assessor, Result} from "../models/Analysis";
-import {getIndicatorColor} from "../utils/utils";
+import React from 'react';
+import Presenter from './Presenter';
+import {Assessor, Result} from '../models/Analysis';
+import {getIndicatorColor} from '../utils/utils';
 import Box from '@mui/material/Box';
-import RatingIndicator from "./RatingIndicator";
-import AccordionItem from "./AccordionItem";
+import RatingIndicator from './RatingIndicator';
+import AccordionItem from './AccordionItem';
 
 interface AnalysisResultsProps {
   heading: string;

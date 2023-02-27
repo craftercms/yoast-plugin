@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
-import ListItemText from "@mui/material/ListItemText";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemButton from "@mui/material/ListItemButton";
-import OpenInNewIcon from "@mui/icons-material/OpenInNew";
+import ListItemText from '@mui/material/ListItemText';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemButton from '@mui/material/ListItemButton';
+import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import Dialog from '@mui/material/Dialog';
-import DialogHeader from "../components/DialogHeader";
-import FacebookPreview from "../yoast/social-metadata-previews/facebook/FacebookPreview";
+import DialogHeader from '../components/DialogHeader';
+import FacebookPreview from '../yoast/social-metadata-previews/facebook/FacebookPreview';
 import DialogBody from "./DialogBody";
 
 function getStyles () {

@@ -1,6 +1,6 @@
-import {Rating, Result} from "../models/Analysis";
+import {Rating, Result} from '../models/Analysis';
 // @ts-ignore
-import { helpers } from "yoastseo";
+import { helpers } from 'yoastseo';
 
 export function isObject(obj: any) {
   var type = typeof obj;

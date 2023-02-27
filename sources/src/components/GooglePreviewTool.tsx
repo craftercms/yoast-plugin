@@ -1,19 +1,19 @@
 import React, {useState} from 'react';
-import { MODE_DESKTOP, MODE_MOBILE } from "../yoast/search-metadata-previews/snippet-preview/constants";
+import { MODE_DESKTOP, MODE_MOBILE } from '../yoast/search-metadata-previews/snippet-preview/constants';
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
 import Divider from '@mui/material/Divider';
-import SnippetPreview from "../yoast/search-metadata-previews/snippet-preview/SnippetPreview";
-import ListItemText from "@mui/material/ListItemText";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemButton from "@mui/material/ListItemButton";
+import SnippetPreview from '../yoast/search-metadata-previews/snippet-preview/SnippetPreview';
+import ListItemText from '@mui/material/ListItemText';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemButton from '@mui/material/ListItemButton';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import Dialog from '@mui/material/Dialog';
-import DialogHeader from "./DialogHeader";
-import DialogBody from "./DialogBody";
+import DialogHeader from './DialogHeader';
+import DialogBody from './DialogBody';
 
 function getStyles () {
   return {

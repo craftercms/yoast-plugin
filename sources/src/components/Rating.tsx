@@ -1,7 +1,7 @@
 import React from 'react';
 import Typography from '@mui/material/Typography';
 import ListItem from '@mui/material/ListItem';
-import RatingIndicator from "./RatingIndicator";
+import RatingIndicator from './RatingIndicator';
 
 interface RatingProps {
   rating: 'bad' | 'ok' | 'good';

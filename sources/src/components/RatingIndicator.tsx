@@ -1,5 +1,5 @@
 import React from 'react';
-import Box from "@mui/material/Box";
+import Box from '@mui/material/Box';
 
 export interface RatingIndicatorProps {
   rating: 'bad' | 'ok' | 'good';
