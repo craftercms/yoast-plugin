@@ -8,6 +8,7 @@ import copy from 'rollup-plugin-copy';
 import treeshaking from 'rollup-plugin-ts-treeshaking';
 import replace from '@rollup/plugin-replace';
 import babel from 'rollup-plugin-babel';
+import yoastPostBuild from './yoast-post-build';
 
 const extensions = ['.js', '.jsx', '.ts', '.tsx'];
 
@@ -43,8 +44,8 @@ export default {
     }),
     typescript(),
     treeshaking(),
-    replaceImportsWithVars({ varType: 'var', replacementLookup: globals }),
-    resolve({ extensions, preferBuiltins: false }),
+    replaceImportsWithVars({varType: 'var', replacementLookup: globals}),
+    resolve({extensions, preferBuiltins: false}),
     babel({
       exclude: 'node_modules/**',
       presets: ['@babel/preset-env', '@babel/preset-react'],
@@ -65,6 +66,7 @@ export default {
           dest: './dist'
         }
       ]
-    })
+    }),
+    yoastPostBuild()
   ]
 };
