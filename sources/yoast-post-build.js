@@ -8,7 +8,7 @@ import fsPromises from 'fs/promises';
 const yoastPostBuild = (filePath = './dist/index.modern.js') => {
   return {
     name: 'yoast-post-build',
-    generateBundle: async () => {
+    writeBundle: async () => {
       const content = await fsPromises.readFile(filePath, 'utf8');
       const contentToMoveInitialPosition = content.indexOf('var lib$1 =');
       const contentToMoveFinalPosition = content.indexOf('var htmlParser =');
