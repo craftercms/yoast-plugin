@@ -50,6 +50,7 @@ const FacebookTextWrapper = styled.div`
 	border-bottom: ${ props => props.mode === "landscape" ? "" : "1px solid #dddfe2" };
 	border-top: ${ props => props.mode === "landscape" ? "" : "1px solid #dddfe2" };
 	border-right: ${ props => props.mode === "landscape" ? "" : "1px solid #dddfe2" };
+	border-left: ${ props => props.mode === "landscape" ? "" : "1px solid #dddfe2" };
 	border: ${ props => props.mode === "landscape" ? "1px solid #dddfe2" : "" };
 	display: flex;
 	flex-direction: column;
