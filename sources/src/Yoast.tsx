@@ -25,13 +25,13 @@ const Yoast = () => {
   const [requestedSEOData, setRequestedSEOData] = useState(false);
   const requestSEOData = () => {
     setRequestedSEOData(true);
-    //@ts-ignore - Unresolved variable CrafterCMSNExt
-    window.CrafterCMSNext?.system.getHostToGuestBus?.().next({ type: 'REQUEST_SEO_DATA' });
+    //@ts-ignore - Unresolved variable craftercms
+    window.craftercms?.utils.subjects.getHostToGuestBus?.().next({ type: 'REQUEST_SEO_DATA' });
   }
 
   useEffect(() => {
-    // @ts-ignore
-    const guestToHostSubscription = window.CrafterCMSNext?.system.getGuestToHostBus?.()
+    //@ts-ignore - Unresolved variable craftercms
+    const guestToHostSubscription = window.craftercms?.utils.subjects.getGuestToHostBus?.()
       .subscribe((action) => {
         switch (action.type) {
           case 'RESPONSE_SEO_DATA':
