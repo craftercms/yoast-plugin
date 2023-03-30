@@ -20,7 +20,7 @@ plugin:
     screenshots:
       - title: Yoast plugin
         description: Crafter CMS Yoast Plugin
-        url: "https://raw.githubusercontent.com/craftercms/site-plugin-example/master/.crafter/logo.svg"
+        url: "https://raw.githubusercontent.com/craftercms/chatbot-plugin/liveperson/.crafter/cover.png"
   developer:
     company:
       name: Crafter Software
