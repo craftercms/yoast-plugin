@@ -1,0 +1,88 @@
+# This file describes a plugin for use in Crafter CMS
+# The version of the format for this file
+descriptorVersion: 2
+# Describe the plugin
+plugin:
+  type: site
+  id: org.craftercms.plugin
+  name: Yoast plugin
+  tags:
+    - yoast
+  version:
+    major: 1
+    minor: 0
+    patch: 0
+  description: Yoast plugin
+  website:
+    name: Yoast plugin
+    url: https://github.com/craftercms/yoast-plugin
+  media:
+    screenshots:
+      - title: Yoast plugin
+        description: Crafter CMS Yoast Plugin
+        url: "https://raw.githubusercontent.com/craftercms/site-plugin-example/master/.crafter/logo.svg"
+  developer:
+    company:
+      name: Crafter Software
+      email: info@craftersoftware.com
+      url: https://craftersoftware.com
+  build:
+    id: c3d2a5444e6a24b5e0481d6ba87901d0b02716c8
+    date: 2021-06-02T00:00:00Z
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+  crafterCmsVersions:
+    - major: 4
+      minor: 0
+      patch: 3
+  crafterCmsEditions:
+    - community
+    - enterprise
+  installation:
+    - type: preview-app
+      parentXpath: //widget[@id='craftercms.components.ICEToolsPanel']
+      elementXpath: //plugin[@id='org.craftercms.yoastPlugin.components.yoast']
+      element:
+        name: configuration
+        children:
+          - name: widgets
+            children:
+              - name: widget
+                attributes:
+                  - name: id
+                    value: craftercms.components.ToolsPanelPageButton
+                children:
+                  - name: configuration
+                    children:
+                      - name: target
+                        attributes:
+                          - name: id
+                            value: icePanel
+                      - name: title
+                        attributes:
+                          - name: id
+                            value: yoast.yoastSeo
+                          - name: defaultMessage
+                            value: Yoast SEO
+                      - name: icon
+                        attributes:
+                          - name: id
+                            value: '@mui/icons-material/PollOutlined'
+                      - name: widgets
+                        children:
+                          - name: widget
+                            attributes:
+                              - name: id
+                                value: org.craftercms.yoastPlugin.components.yoast
+                            children:
+                              - name: plugin
+                                attributes:
+                                  - name: id
+                                    value: org.craftercms.plugin
+                                  - name: type
+                                    value: sidebar
+                                  - name: name
+                                    value: yoast-plugin
+                                  - name: file
+                                    value: index.modern.js
