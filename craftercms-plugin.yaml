@@ -4,14 +4,14 @@ descriptorVersion: 2
 # Describe the plugin
 plugin:
   type: site
-  id: org.craftercms.plugin
+  id: org.craftercms.plugin.yoast
   name: Yoast plugin
   tags:
     - yoast
   version:
     major: 1
     minor: 0
-    patch: 4
+    patch: 5
   description: Yoast plugin
   website:
     name: Yoast plugin
@@ -42,6 +42,9 @@ plugin:
     - major: 4
       minor: 1
       patch: 0
+    - major: 4
+      minor: 1
+      patch: 1
   crafterCmsEditions:
     - community
     - enterprise
