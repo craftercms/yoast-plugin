@@ -4,7 +4,7 @@ descriptorVersion: 2
 # Describe the plugin
 plugin:
   type: site
-  id: org.craftercms.plugin
+  id: org.craftercms.plugin.yoast
   name: Yoast plugin
   tags:
     - yoast
