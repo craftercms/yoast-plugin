@@ -9,7 +9,9 @@ function getStyles() {
   return {
     root: {
       boxShadow: 'none',
-      borderBottom: '1px solid rgba(0, 0, 0, 0.12)'
+      borderBottom: '1px solid rgba(0, 0, 0, 0.12)',
+      bgcolor: 'background.paper',
+      backgroundImage: 'none'
     }
   }
 }

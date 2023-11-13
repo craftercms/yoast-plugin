@@ -13,7 +13,7 @@ export default function DialogHeader (props: DialogHeaderProps) {
   const { children, onClose, ...other } = props;
 
   return (
-    <DialogTitle sx={{ m: 0, p: 2 }} {...other}>
+    <DialogTitle sx={{ m: 0, p: 2, bgcolor: 'background.paper' }} {...other}>
       {children}
       {onClose ? (
         <IconButton

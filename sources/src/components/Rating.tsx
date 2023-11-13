@@ -14,7 +14,6 @@ function getStyles() {
   return {
     rating: {
       paddingLeft: '25px',
-      backgroundColor: '#fff',
       position: 'relative'
     },
     ratingIndicator: {

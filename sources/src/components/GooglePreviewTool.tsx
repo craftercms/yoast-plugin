@@ -14,6 +14,8 @@ import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import Dialog from '@mui/material/Dialog';
 import DialogHeader from './DialogHeader';
 import DialogBody from './DialogBody';
+import Box from "@mui/material/Box";
+import palette from "@craftercms/studio-ui/styles/palette";
 
 function getStyles () {
   return {
@@ -23,8 +25,7 @@ function getStyles () {
     },
     listItemText: {
       '& span': {
-        fontWeight: 700,
-        color: 'rgba(0, 0, 0, 0.87)'
+        fontWeight: 700
       }
     },
     listItemIcon: {
@@ -90,7 +91,15 @@ export default function GooglePreviewTool(props: GooglePreviewToolProps) {
                 </RadioGroup>
               </FormControl>
               <Divider light sx={{ mt: 1, mb: 2 }} />
-              <SnippetPreview { ...props.data } mode={previewMode} />
+              <Box sx={{
+                '& #yoast-snippet-preview-container': {
+                  width: '100%',
+                  padding: '10px',
+                  backgroundColor: palette.white
+                }
+              }}>
+                <SnippetPreview { ...props.data } mode={previewMode} />
+              </Box>
             </>
           }
         </DialogBody>

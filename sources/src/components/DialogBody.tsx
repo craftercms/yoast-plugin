@@ -4,7 +4,6 @@ import DialogContent from '@mui/material/DialogContent';
 function getStyles() {
   return {
     root: {
-      backgroundColor: 'rgb(250, 250, 250)',
       padding: '20px 24px !important'
     }
   }

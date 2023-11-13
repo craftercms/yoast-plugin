@@ -6,6 +6,9 @@ import AnalysisResults from './components/AnalysisResults';
 import GooglePreviewTool, { GooglePreviewProps } from './components/GooglePreviewTool';
 import List from '@mui/material/List';
 import FacebookPreviewTool, { FacebookPreviewProps } from './components/FacebookPreviewTool';
+import { useMediaQuery } from '@mui/material';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import palette from '@craftercms/studio-ui/styles/palette';
 
 const i18n = () => {
   return new Jed({
@@ -23,6 +26,17 @@ const Yoast = () => {
   const [contentAssessorResults, setContentAssessorResults] = useState();
   const [seoAssessorResults, setSeoAssessorResults] = useState();
   const [requestedSEOData, setRequestedSEOData] = useState(false);
+  const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
+  const mode = prefersDarkMode ? 'dark' : 'light';
+  const theme = createTheme({
+    palette: {
+      mode,
+      background: {
+        default: prefersDarkMode ? palette.gray.dark7 : palette.gray.light0
+      }
+    }
+  });
+
   const requestSEOData = () => {
     setRequestedSEOData(true);
     //@ts-ignore - Unresolved variable craftercms
@@ -101,7 +115,7 @@ const Yoast = () => {
   }, [paper]);
 
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <List sx={{ width: '100%', bgcolor: 'background.paper' }} component="nav">
         {
           contentAssessor &&
@@ -122,7 +136,7 @@ const Yoast = () => {
         <GooglePreviewTool data={googlePreviewData} />
         <FacebookPreviewTool data={facebookPreviewData}/>
       </List>
-    </>
+    </ThemeProvider>
   )
 }
 
