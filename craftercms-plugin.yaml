@@ -11,7 +11,7 @@ plugin:
   version:
     major: 1
     minor: 0
-    patch: 8
+    patch: 9
   description: Yoast plugin
   website:
     name: Yoast plugin
@@ -48,6 +48,18 @@ plugin:
     - major: 4
       minor: 0
       patch: 6
+    - major: 4
+      minor: 0
+      patch: 7
+    - major: 4
+      minor: 0
+      patch: 8
+    - major: 4
+      minor: 0
+      patch: 9
+    - major: 4
+      minor: 0
+      patch: 10
     - major: 4
       minor: 1
       patch: 0
