@@ -11,7 +11,7 @@ plugin:
   version:
     major: 1
     minor: 0
-    patch: 7
+    patch: 8
   description: Yoast plugin
   website:
     name: Yoast plugin
@@ -115,7 +115,7 @@ plugin:
                               - name: plugin
                                 attributes:
                                   - name: id
-                                    value: org.craftercms.plugin
+                                    value: org.craftercms.plugin.yoast
                                   - name: type
                                     value: sidebar
                                   - name: name
