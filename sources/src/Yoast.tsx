@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useMemo, useState} from 'react';
 import { Paper, SeoAssessor, ContentAssessor, helpers } from 'yoastseo';
 import {Paper as PaperType} from './models/Analysis';
 import Jed from 'jed';
@@ -28,14 +28,14 @@ const Yoast = () => {
   const [requestedSEOData, setRequestedSEOData] = useState(false);
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
   const mode = prefersDarkMode ? 'dark' : 'light';
-  const theme = createTheme({
+  const theme = useMemo(() => createTheme({
     palette: {
       mode,
       background: {
         default: prefersDarkMode ? palette.gray.dark7 : palette.gray.light0
       }
-    }
-  });
+    },
+  }), [prefersDarkMode]);
 
   const requestSEOData = () => {
     setRequestedSEOData(true);
