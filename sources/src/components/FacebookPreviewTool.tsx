@@ -16,8 +16,7 @@ function getStyles () {
     },
     listItemText: {
       '& span': {
-        fontWeight: 700,
-        color: 'rgba(0, 0, 0, 0.87)'
+        fontWeight: 700
       }
     },
     listItemIcon: {
