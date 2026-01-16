@@ -11,7 +11,7 @@ plugin:
   version:
     major: 1
     minor: 0
-    patch: 15
+    patch: 16
   description: Yoast plugin
   website:
     name: Yoast plugin
@@ -43,6 +43,8 @@ plugin:
       minor: 3
     - major: 4
       minor: 4
+    - major: 4
+      minor: 5
     - major: 5
       minor: 0
   crafterCmsEditions:
